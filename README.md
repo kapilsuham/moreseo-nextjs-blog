@@ -1,8 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# [MoreSEO](https://moreseo.net/?utm_source=github) Blog API for Next.js Website
 
-## Getting Started
+## Overview
 
-First, run the development server:
+Elevate your Next.js website by integrating MoreSEO's Blog API. This setup allows you to fetch and render real-time, SEO-optimized blog content directly into your website.
+
+## Demo
+
+Visit the [MoreSEO Blog](https://moreseo.net/blog?utm_source=github) to check out an example of MoreSEO Blog API integration.
+
+## Prerequisites
+
+- Node.js installed on your machine
+- MoreSEO API Key (you can find it in your website settings on [app.moreseo.net](https://app.moreseo.net/?utm_source=github))
+
+## Environment Setup
+
+First, set up your MoreSEO API Key environment variable. Create a `.env.local` file for local development:
+
+```bash
+MORESEO_API_KEY=<your_moreseo_key>
+```
+
+⚠️ You can use following **DEMO** MORESEO_API_KEY for local development:
+
+```bash
+MORESEO_API_KEY=cfe0e224-9533-4ab4-9a95-52ddbca8ebec
+```
+
+## Running the Development Server
+
+1. Install the required packages:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+2. Execute one of the following commands to start the development server:
 
 ```bash
 npm run dev
@@ -10,27 +47,47 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Once the server is running, navigate to [http://localhost:3000/blog](http://localhost:3000/blog) in your browser to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API client library
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project incorporates the MoreSEO Blog API Client Library. For more details and to install the npm package, visit [moreseo on npmjs](https://www.npmjs.com/package/moreseo).
 
-## Learn More
+## Editing the Blog Design
 
-To learn more about Next.js, take a look at the following resources:
+You can begin customizing your blog design by editing the files under the `app/blog/` route. Your changes will be automatically reflected in the app thanks to Next.js's hot reloading feature.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Sitemap Configuration for SEO
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Automatic Integration
 
-## Deploy on Vercel
+This project comes with a separate `blog/sitemap.xml` generated dynamically. If you have an existing dynamic sitemap, you can programmatically merge the blog sitemap into it. The exact steps depend on how you're generating your main sitemap, but the goal is to combine them seamlessly.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Standalone Blog Sitemap
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+If you prefer not to merge, it's crucial to submit the standalone `blog/sitemap.xml` to your Google Search Console for SEO.
+
+- Open Google Search Console.
+- Select 'Sitemaps' from the menu.
+- Enter the URL of your `blog/sitemap.xml`.
+- Click 'Submit'.
+
+⚠️ **Google Limits**: keep this in mind that Google restricts sitemaps to 50,000 URLs and a file size of up to 50MB.
+
+## Contributing
+
+If you find any bugs or have feature suggestions, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Contact
+
+For additional assistance or information, feel free to reach out.
+
+---
+
+Revolutionize your website's content strategy with real-time, automated, SEO-optimized blog posts. Get started with [MoreSEO](https://moreseo.net/?utm_source=github) AI Blog Autopilot integration today!
